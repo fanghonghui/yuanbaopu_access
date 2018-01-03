@@ -1,0 +1,6 @@
+2017-09-06 14:42:50,760 ERROR 35687 [app_worker] receive disconnect event in cluster fork mode, exitedAfterDisconnect:false
+2017-09-06 14:42:50,760 ERROR 35685 [app_worker] receive disconnect event in cluster fork mode, exitedAfterDisconnect:false
+2017-09-06 14:42:50,761 ERROR 35684 [app_worker] receive disconnect event in cluster fork mode, exitedAfterDisconnect:false
+2017-09-06 14:42:50,761 ERROR 35686 [app_worker] receive disconnect event in cluster fork mode, exitedAfterDisconnect:false
+2017-09-06 14:42:50,762 ERROR 35683 [agent_worker] receive disconnect event on child_process fork mode, exiting with code:110
+2017-09-06 14:42:50,763 ERROR 35683 [agent_worker] exit with code:110

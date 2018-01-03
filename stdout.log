@@ -1,0 +1,17 @@
+2017-09-06 14:29:40,831 INFO 35682 [master] =================== egg start =====================
+2017-09-06 14:29:40,833 INFO 35682 [master] egg version 1.7.0
+2017-09-06 14:29:40,833 INFO 35682 [master] start with options: {"framework":"/Users/feixiangming/WebstormProjects/yuanbaopu_access/node_modules/egg","baseDir":"/Users/feixiangming/WebstormProjects/yuanbaopu_access","port":7002,"workers":4,"plugins":null,"https":false,"key":"","cert":""}
+2017-09-06 14:29:40,833 INFO 35682 [master] start with env: isProduction: false, isDebug: false, EGG_SERVER_ENV: undefined, NODE_ENV: undefined
+2017-09-06 14:29:40,842 INFO 35682 [master] agent_worker#1:35683 start with clusterPort:63714
+2017-09-06 14:29:41,419 INFO 35682 [master] agent_worker#1:35683 started (581ms)
+2017-09-06 14:29:41,419 INFO 35682 [master] start appWorker with args ["{\"framework\":\"/Users/feixiangming/WebstormProjects/yuanbaopu_access/node_modules/egg\",\"baseDir\":\"/Users/feixiangming/WebstormProjects/yuanbaopu_access\",\"port\":7002,\"workers\":4,\"plugins\":null,\"https\":false,\"key\":\"\",\"cert\":\"\",\"clusterPort\":63714}"]
+2017-09-06 14:29:41,440 INFO 35682 [master] app_worker#1:35684 start, state: none, current workers: ["1","2","3","4"]
+2017-09-06 14:29:41,440 INFO 35682 [master] app_worker#2:35685 start, state: none, current workers: ["1","2","3","4"]
+2017-09-06 14:29:41,440 INFO 35682 [master] app_worker#3:35686 start, state: none, current workers: ["1","2","3","4"]
+2017-09-06 14:29:41,440 INFO 35682 [master] app_worker#4:35687 start, state: none, current workers: ["1","2","3","4"]
+2017-09-06 14:29:42,575 INFO 35682 [master] app_worker#1:35684 started at 7002, remain 3 (1156ms)
+2017-09-06 14:29:42,576 INFO 35682 [master] app_worker#4:35687 started at 7002, remain 2 (1157ms)
+2017-09-06 14:29:42,605 INFO 35682 [master] app_worker#2:35685 started at 7002, remain 1 (1186ms)
+2017-09-06 14:29:42,609 INFO 35682 [master] app_worker#3:35686 started at 7002, remain 0 (1190ms)
+2017-09-06 14:29:42,610 INFO 35682 [master] egg started on http://127.0.0.1:7002 (1776ms)
+*******************************************encoder

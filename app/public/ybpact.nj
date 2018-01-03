@@ -1,0 +1,542 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title id="title">元宝铺</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="元宝铺">
+  <meta content="telephone=no, address=no" name="format-detection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <script type="text/javascript" src="js/route.js"></script>
+
+  <style type="text/css">
+    body {
+      background: #f2f2f2;
+      -webkit-font-smoothing: antialiased;
+    }
+    body, input, label, select, option, textarea, button, fieldset, legend {
+      font: 12px/1.5 Arial, Helvetica, sans-serif, \5b8b\4f53;
+    }
+
+    body, button, textarea, blockquote, fieldset, body, legend, dl, dt, dd, h1, h2, h3, h4, h5, h6, hr, input, ul, ol, p, pre, td, th {
+      margin: 0px;
+      padding: 0px;
+
+    }
+    input {
+      border: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .listbox {
+      width: 100%;
+      padding:0 12px;
+      box-sizing:border-box;
+    }
+    .bar {
+      background: white;
+      padding: 14px;
+    }
+    .relative {
+      position: relative;
+    }
+    .bar h2{
+      font-size: 19px;
+      font-weight:600;
+      color: #555;
+    }
+    .txt-icon {
+      display: block;
+      padding: 0px 10px;
+      text-align:center;
+      border:1px solid #ffcdd0;
+      border-top-right-radius: 4px;
+      border-bottom-left-radius: 4px;
+      transform:skew(-20deg);
+      -webkit-transform: skew(-20deg);
+      -moz-transform: skew(-20deg);
+      -o-transform:skew(-20deg);
+      -ms-transform:skew(-20deg);
+      background-color: #ff4c58;
+      position: absolute;
+      width: 36px;
+      top: 2px;
+      left: 79px;
+    }
+    .txt-icon.cur {
+      left: 60px;
+    }
+    .rotate {
+      font-style: normal;
+      color:white;
+      font-size: 12px;
+      display:block;
+      transform:skew(20deg);
+      -webkit-transform: skew(20deg);
+      -moz-transform: skew(20deg);
+      -o-transform:skew(20deg);
+      -ms-transform:skew(20deg);
+    }
+    .bar-r {
+      font-size: 15px;
+      color: #555;
+      float:right;
+      font-weight: normal;
+    }
+    .bar-detail {
+      padding:0px 0px 0 106px;
+      box-sizing: border-box;
+      height: 100px;
+      margin-top: 10px;
+      display: flex;
+      position: relative;
+    }
+    .bar-dsd {
+      background: #f2f2f2 url(img/dsd.png) 10px center no-repeat;
+      background-size: 85px 85px;
+    }
+    .bar-detail-a {
+      align-self: center;
+    }
+    .bar-detail-a p {
+      font-size: 12px;
+      color: #555;
+      line-height: 25px;
+    }
+    .cr-red{
+      color:#ff4c57;
+    }
+    .bar-btn {
+      border-radius:50px;
+      padding: 0 5px;
+      color:#fff;
+      font-size: 12px;
+      line-height: 28px;
+      display: block;
+      position: absolute;
+      bottom:10px;
+      right: 8px;
+      background:#01a3f6;
+    }
+    .mt14{
+      margin-top: 14px;
+    }
+    .bar-scd {
+      background: #f2f2f2 url(img/scd.png) 10px center no-repeat;
+      background-size: 85px 85px;
+    }
+    .bar-fd {
+      background: #f2f2f2 url(img/fd.png) 10px center no-repeat;
+      background-size: 85px 85px;
+    }
+    .bar-ched {
+      background: #f2f2f2 url(img/ched.png) 10px center no-repeat;
+      background-size: 85px 85px;
+    }
+    .bar-xfd {
+      background: #f2f2f2 url(img/xfd.png) 10px center no-repeat;
+      background-size: 85px 85px;
+    }
+    .content {
+      padding-bottom: 50px;
+    }
+    .detail-box {
+      width: 100%;
+      background: #fff;
+    }
+    .detail-imgbox {
+      width: 100%;
+    }
+    .detail-imgbox img {
+      width: 100%;
+      display: block;
+      border: none;
+    }
+    .detail-box-p {
+      font-size: 12px;
+      padding-left: 28px;
+      line-height: 25px;
+      position: relative;
+    }
+    .detail-box-p:before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 20px;
+      position:absolute;
+      left:0;
+      top:1px;
+    }
+    .icon-cp:before{
+      background: url("img/icon-cp.png") center no-repeat;
+      background-size: 100%;
+    }
+    .icon-sq:before{
+      background: url("img/icon-sq.png") center no-repeat;
+      background-size: 100%;
+    }
+    .icon-lc:before{
+      background: url("img/icon-lc.png") center no-repeat;
+      background-size: 100%;
+    }
+    .cr-blue{
+      color:#01a3f6;
+    }
+    .detail-con {
+      padding: 0 10px;
+    }
+    .detail-con-cp {
+      padding:8px 0 8px 0;
+      border-bottom: 1px solid #f2f2f2;
+    }
+    .detail-con-lc,
+    .detail-con-sq {
+      padding:0px 0 10px 0;
+    }
+    .detail-con-cp ul{
+      overflow: hidden;
+    }
+    .detail-con-cp ul li {
+      float: left;
+      width: 50%;
+      text-align: left;
+      color: #555;
+    }
+    .mt5{
+      margin-top: 5px;
+    }
+    p{
+      color: #555;
+    }
+    .detail-con-sq-txtbox {
+      line-height: 22px;
+    }
+    .ul-lc {
+      text-align: center;
+      display: flex;
+      -webkit-display:flex;
+      -ms-display:flex;
+      justify-content: center;
+      -ms-justify-content: center;
+      -webkit-justify-content: center;
+    }
+    .ul-lc li {
+      color: #555;
+    }
+    .li-w19{
+      width: 19%;
+      padding-top: 55px;
+    }
+    .lc1 {
+      background: url("img/lc1.png") center top  no-repeat;
+      background-size: 52px;
+    }
+    .lc2 {
+      background: url("img/lc2.png") center top  no-repeat;
+      background-size: 52px;
+    }
+    .lc3 {
+      background: url("img/lc3.png") center top  no-repeat;
+      background-size: 52px;
+    }
+    .lc4 {
+      background: url("img/lc4.png") center top  no-repeat;
+      background-size: 52px;
+    }
+    .li-w6 {
+      width: 6%;
+      text-align: center;
+      padding-top: 30px;
+      vertical-align: top;
+    }
+    .detail-box {
+      display: none;
+      padding-bottom: 24px;
+    }
+    .content {
+      display: none;
+    }
+    .gobtn {
+      position: fixed;
+      width: 100%;
+      background: #01a3f6;
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      line-height: 48px;
+      box-sizing: border-box;
+      left:0;
+      bottom: 0;
+    }
+    .info {
+      padding-top: 10px;
+      display: none;
+    }
+    .lable{
+      width: 100%;
+      box-sizing: border-box;
+      padding-left: 10px;
+      font-size: 14px;
+      display: flex;
+      line-height: 40px;
+      background: #fff;
+    }
+    .info input {
+      background: transparent;
+      line-height: 40px;
+      flex-grow: 1;
+      -webkit-flex-grow: 1;
+      -moz-flex-grow:1;
+      -ms-flex-grow:1;
+      text-indent: 20px;
+    }
+    .submit-btn {
+      display: block;
+      background: #01a3f6;
+      color: #fff;
+      text-align: center;
+      font-size: 14px;
+      line-height: 48px;
+      margin: auto;
+      margin-top: 40px;
+      width: 80%;
+      border:none;
+      border-radius:4px;
+
+    }
+    .tishi {
+      display: none;
+    }
+    .mask {
+      position: absolute;
+      left:0;
+      right: 0;
+      bottom:0;
+      top:0;
+      z-index: 10;
+      background: rgba(0,0,0,.3);
+      display: none;
+    }
+    .model {
+        position: absolute;
+        width: 70%;
+        margin: auto;
+        left: 15%;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .model-footer {
+      margin-top: 10px;
+      text-align: center;
+    }
+    .lable span {
+      width: 86px;
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <a href="#/index?index=1">
+  </a><!--#/index -->
+  <!--<a href="#/list?list=1">异步加载列表页</a>-->
+  <!--<a href="#/detail?detail=1">异步加载详情页</a>-->
+  <!--<a href="#/detail2?detail=2">同步加载详情页</a>-->
+  <div id="content" class="content">
+    <ul class="listbox">
+      <li class="bar mt14">
+        <div>
+          <h2 class="relative">电商贷
+            <i class="txt-icon"><span class="rotate">纯信用</span></i>
+            <span class="bar-r">最快当天下款</span>
+          </h2>
+        </div>
+        <div class="bar-detail bar-dsd">
+            <div class="bar-detail-a">
+              <p>目标客群：网店卖家</p>
+              <p>日息：<span class="cr-red">0.03%</span></p>
+              <p>额度：<span class="cr-red">1万-50万</span></p>
+            </div>
+             <a class="bar-btn" href="#/detail?detail=dsd">点击了解详情</a>
+        </div>
+      </li>
+      <li class="bar mt14">
+        <div>
+          <h2 class="relative">商超贷
+            <i class="txt-icon"><span class="rotate">纯信用</span></i>
+            <span class="bar-r">最快当天下款</span>
+          </h2>
+        </div>
+        <div class="bar-detail bar-scd">
+          <div class="bar-detail-a">
+            <p>目标客群：小型超市、便利店经营者</p>
+            <p>日息：<span class="cr-red">0.06%</span></p>
+            <p>额度：<span class="cr-red">1万-20万</span></p>
+          </div>
+          <a class="bar-btn" href="#/detail?detail=scd">点击了解详情</a>
+        </div>
+      </li>
+      <li class="bar mt14">
+        <div>
+          <h2 class="relative">房贷
+            <i class="txt-icon cur"><span class="rotate">房抵贷</span></i>
+            <span class="bar-r">最快24小时下款</span>
+          </h2>
+        </div>
+        <div class="bar-detail bar-fd">
+          <div class="bar-detail-a">
+            <p>目标客群：企业主、自由职业者</p>
+            <p>日息：<span class="cr-red">4.7厘</span></p>
+            <p>额度：<span class="cr-red">50万-1000万</span></p>
+          </div>
+          <a class="bar-btn" href="#/detail?detail=fd">点击了解详情</a>
+        </div>
+      </li>
+      <li class="bar mt14">
+        <div>
+          <h2 class="relative">车贷
+            <i class="txt-icon cur"><span class="rotate">车抵贷</span></i>
+            <span class="bar-r">最快24小时下款</span>
+          </h2>
+        </div>
+        <div class="bar-detail bar-ched">
+          <div class="bar-detail-a">
+            <p>目标客群：企业主、自由职业者</p>
+            <p>日息：<span class="cr-red">8.3厘</span></p>
+            <p>额度：<span class="cr-red">3万-60万</span></p>
+          </div>
+          <a class="bar-btn" href="#/detail?detail=cdd">点击了解详情</a>
+        </div>
+      </li>
+      <li class="bar mt14">
+        <div>
+          <h2 class="relative">消费贷
+            <i class="txt-icon "><span class="rotate">纯信用</span></i>
+            <span class="bar-r">3分钟放款</span>
+          </h2>
+        </div>
+        <div class="bar-detail bar-xfd">
+          <div class="bar-detail-a">
+            <p>目标客群：急用钱。消费分期客户</p>
+            <p>日息：<span class="cr-red">0.04%</span></p>
+            <p>额度：<span class="cr-red">1千-3万</span></p>
+          </div>
+          <a class="bar-btn" href="#/detail?detail=xfd">点击了解详情</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="detailbox" class="detail-box">
+     <div class="detail-imgbox">
+       <img id="detailimg" src="" alt="">
+     </div>
+    <div class="detail-con">
+      <div class="detail-con-cp">
+        <p class="detail-box-p icon-cp cr-blue">产品属性</p>
+        <ul class="mt5">
+          <li>日息：<span id="rixi" class="cr-red">0.03%</span></li>
+          <li id="hkfs">还款方式：按月还款</li>
+          <li>额度：<span id="money" class="cr-red">1万-50万</span></li>
+          <li id="jd">最快当天下款</li>
+        </ul>
+      </div>
+      <div class="detail-con-sq">
+        <p class="detail-box-p icon-sq cr-blue mt5">申请条件</p>
+        <div id="txtbox" class="detail-con-sq-txtbox">
+          <p>1.年龄在20-60周岁；</p>
+          <p>2.网店铺经营时间1年以上；</p>
+          <p>3.正常经营天猫，淘宝，京东，亚马逊，速卖通均可办理</p>
+        </div>
+      </div>
+      <div class="detail-con-lc">
+        <p class="detail-box-p icon-lc cr-blue">申请流程</p>
+        <ul class="ul-lc">
+          <li class="lc1 li-w19">
+            <span id="lc1txt" class="cr-5">
+              提交资料申请贷款
+            </span>
+          </li><li class="li-w6">》</li><li class="lc2 li-w19">
+            <span id="lc2txt" class="cr-5">
+              元宝铺评估授信额度
+            </span>
+          </li><li class="li-w6">》</li><li class="lc3 li-w19">
+            <span id="lc3txt" class="cr-5">
+              银行审核放款
+            </span>
+          </li><li class="li-w6">》</li><li class="lc4 li-w19">
+            <span id="lc4txt" class="cr-5">
+              签约完成支用
+            </span>
+          </li>
+        </ul>
+      </div>
+      <a class="gobtn" id="gobtn" href="#/submitinfo">立即申请</a>
+    </div>
+  </div>
+  <div id="info" class="info">
+      <lable class="lable">
+        <span >姓名：</span><input type="text" id="name" placeholder="请输入姓名">
+      </lable>
+    <lable class="lable" style="border-top:1px solid #f2f2f2;">
+     <span >手机号：</span>
+      <input type="text" id="phone" placeholder="请输入手机号码">
+    </lable>
+    <lable class="lable" style="border-top:1px solid #f2f2f2;">
+          <span >推荐人姓名：</span>
+          <input type="text" id="referrer" placeholder="请输入推荐人姓名">
+    </lable>
+    <div id="tishi"  class="cr-red tishi"></div>
+    <button id="submitbtn" class="submit-btn" type="submit">提交</button>
+  </div>
+
+  <div id="mask" class='mask'>
+     <div id="model" class="model">
+        <div class="model-body">
+           您的贷款申请已提交，我们的客户经理将会很快与您联系，请注意<span class="cr-blue">0571</span>开头来电，谢谢配合！
+        </div>
+       <div class="model-footer">
+           <span id="close" class="cr-blue">我知道了</span>
+       </div>
+     </div>
+  </div>
+   <script type="text/javascript" src="js/zepto.min.js"></script>
+  <script type="text/javascript" >
+   	spaRouters.map('/index',function(transition){
+      spaRouters.asyncFun('js/index.js?'+new Date(),transition)
+  	})
+  	spaRouters.map('/submitinfo',function(transition){
+      spaRouters.asyncFun('js/submitinfo.js',transition)
+  	})
+  	spaRouters.map('/detail',function(transition){
+      spaRouters.asyncFun('js/detail.js?'+new Date(),transition)
+  	})
+
+    spaRouters.beforeEach(function(transition){
+      console.log('切换之前dosomething')
+      setTimeout(function(){
+        //模拟切换之前延迟，比如说做个异步登录信息验证
+         transition.next()
+      },100)
+    })
+    spaRouters.afterEach(function(transition){
+      console.log("切换之后dosomething")
+    })
+    spaRouters.init()
+  </script>
+</body>
+</html>
